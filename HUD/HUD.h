@@ -37,7 +37,7 @@
 
 +(MBProgressHUD*)showUIBlockingProgressIndicatorWithText:(NSString*)str andProgress:(float)progress;
 
-+(MBProgressHUD*)showAlertWithTitle:(NSString*)titleText text:(NSString*)text;
++(MBProgressHUD*)showAlertWithTitle:(NSString*)titleText text:(NSString*)text withTimeout:(int)seconds;
 +(MBProgressHUD*)showAlertWithTitle:(NSString*)titleText text:(NSString*)text target:(id)t action:(SEL)sel;
 
 +(void)hideUIBlockingIndicator;
