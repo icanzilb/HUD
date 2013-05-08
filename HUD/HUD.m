@@ -130,7 +130,15 @@ static UIView* lastViewWithHUD = nil;
 
 +(MBProgressHUD*)showAlertWithTitle:(NSString*)titleText text:(NSString*)text
 {
-    return [self showAlertWithTitle:titleText text:text target:nil action:NULL];
+    MBProgressHUD* hud = [self showAlertWithTitle:titleText text:text target:nil action:NULL];
+	return hud;
+}
+
++(MBProgressHUD*)showTimedAlertWithTitle:(NSString*)titleText text:(NSString*)text withTimeout:(int)seconds
+{
+    MBProgressHUD* hud = [self showAlertWithTitle:titleText text:text target:nil action:NULL];
+	[hud hide:YES afterDelay:seconds];
+	return hud;
 }
 
 +(MBProgressHUD*)showAlertWithTitle:(NSString*)titleText text:(NSString*)text target:(id)t action:(SEL)sel
